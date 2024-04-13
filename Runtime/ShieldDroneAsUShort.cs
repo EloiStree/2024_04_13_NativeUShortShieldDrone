@@ -8,11 +8,12 @@ public struct ShieldDroneAsUShort
     public ushort m_quadrantRightX;
     public ushort m_quadrantHeightY;
     public ushort m_quadrantDepthZ;
-    public ushort m_angleLeftRight360;
-    public byte m_percentDronePitch;
-    public byte m_percentDroneRoll;
+    public short m_angleLeftRight360;
+    public sbyte m_percentDronePitch;
+    public sbyte m_percentDroneRoll;
     public ushort m_percentShieldState;
 }
+
 [System.Serializable]
 public struct ShieldDroneAsUShortBytes
 {
@@ -91,13 +92,13 @@ public class ShieldDroneAsUShortUtility {
         drone.m_quadrantDepthZ = BitConverter.ToUInt16(bytes, offset);
         offset += sizeof(ushort);
 
-        drone.m_angleLeftRight360 = BitConverter.ToUInt16(bytes, offset);
+        drone.m_angleLeftRight360 = BitConverter.ToInt16(bytes, offset);
         offset += sizeof(ushort);
 
-        drone.m_percentDronePitch = bytes[offset];
+        drone.m_percentDronePitch = Convert.ToSByte(bytes[offset]);
         offset += sizeof(byte);
 
-        drone.m_percentDroneRoll = bytes[offset];
+        drone.m_percentDroneRoll = Convert.ToSByte(bytes[offset]);
         offset += sizeof(byte);
 
         drone.m_percentShieldState = BitConverter.ToUInt16(bytes, offset);
@@ -122,15 +123,15 @@ public class ShieldDroneAsUShortUtility {
         drone.m_quadrantRightX = (ushort)UnityEngine.Random.Range(0, ushort.MaxValue);
         drone.m_quadrantHeightY = (ushort)UnityEngine.Random.Range(0, ushort.MaxValue);
         drone.m_quadrantDepthZ = (ushort)UnityEngine.Random.Range(0, ushort.MaxValue);
-        drone.m_angleLeftRight360 = (ushort)UnityEngine.Random.Range(0, 36000);
+        drone.m_angleLeftRight360 = (short)UnityEngine.Random.Range(-18000, 18000);
 
     }
     public static void SetRandomTilt(ref ShieldDroneAsUShort drone)
     {
 
 
-        drone.m_percentDronePitch = (byte)UnityEngine.Random.Range(0, 255);
-        drone.m_percentDroneRoll = (byte)UnityEngine.Random.Range(0, 255);
+        drone.m_percentDronePitch = (sbyte)UnityEngine.Random.Range(-128, 127);
+        drone.m_percentDroneRoll = (sbyte)UnityEngine.Random.Range(-128, 127);
 
     }
     public static void SetRandomShield(ref ShieldDroneAsUShort drone)

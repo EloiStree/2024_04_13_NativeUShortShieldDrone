@@ -32,8 +32,8 @@ public class SingleUshortShieldDroneDemoMono : MonoBehaviour
             m_droneInfo.m_quadrantDepthZ * 0.001f
             );
 
-        m_droneInfo.m_percentDronePitch = (byte)Mathf.Clamp(m_droneInfo.m_percentDronePitch, 0, 255);
-        m_droneInfo.m_percentDroneRoll = (byte)Mathf.Clamp(m_droneInfo.m_percentDroneRoll, 0, 255);
+        //m_droneInfo.m_percentDronePitch = (sbyte)Mathf.Clamp(m_droneInfo.m_percentDronePitch, -127, 127);
+        //m_droneInfo.m_percentDroneRoll = (sbyte)Mathf.Clamp(m_droneInfo.m_percentDroneRoll, -127, 127);
 
         float angle = (m_droneInfo.m_angleLeftRight360/(float)36000) *360f;   
         m_whatToMove.localRotation = Quaternion.Euler(0, angle, 0);
@@ -42,8 +42,8 @@ public class SingleUshortShieldDroneDemoMono : MonoBehaviour
             m_renderer.material.color = Color.Lerp(m_colorFromMin, m_colorToMax, m_droneInfo.m_percentShieldState/(float)ushort.MaxValue);
 
 
-        m_tilt = ((m_droneInfo.m_percentDronePitch/255f) - 0.5f) * 2f;
-        m_roll = ((m_droneInfo.m_percentDroneRoll/255f) - 0.5f) * 2f;
+        m_tilt = m_droneInfo.m_percentDronePitch / 127f;//((m_droneInfo.m_percentDronePitch/255f) - 0.5f) * 2f;
+        m_roll = m_droneInfo.m_percentDroneRoll / 127f;//((m_droneInfo.m_percentDroneRoll/255f) - 0.5f) * 2f;
 
         m_whatToMove.Rotate(m_tiltRollAngle * m_tilt, 0, -m_tiltRollAngle * m_roll, Space.Self);
     }

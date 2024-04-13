@@ -99,6 +99,16 @@ public struct JobExe_NativeDroneToByteArray : IJobParallelFor
     {
         value = (ushort)((b2 << 8) | b1);
     }
+
+    public static void ConvertToBytes(in short value, ref byte b1, ref byte b2)
+    {
+        b1 = (byte)(value & 0xFF);
+        b2 = (byte)((value >> 8) & 0xFF);
+    }
+    public static void ConvertToBytes(ref short value, in byte b1, byte b2)
+    {
+        value = (short)((b2 << 8) | b1);
+    }
     public void Execute(int index)
     {
         ShieldDroneAsUShort drone = m_drones[index];
