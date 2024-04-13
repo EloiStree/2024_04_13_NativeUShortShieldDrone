@@ -1,0 +1,23 @@
+
+{                                                                                
+  "name": "be.eloistree.nativeushortshielddrone",                              
+  "displayName": "Native UShort Shield Drone",                        
+  "version": "0.0.1",                         
+  "unity": "2018.1",                             
+  "unityRelease": "",                             
+  "description": "Use for a Integer MMO, this package represent the basic of the game. A drone, it position and the shield state of it. The CCC of the game. This class is use on the server and the clients.",                         
+  "keywords": ["Script","Tool"],                       
+  "dependencies":{},     
+  "relatedPackages":{},     
+  "samples" : [],     
+  "author" : {
+"name":"",
+"mail":"",
+"url":""},     
+  "repository":{
+"type":"Git",
+"url":"https://github.com/EloiStree/2024_04_13_NativeUShortShieldDrone.git",
+"footprint":"",
+"revision":""},     
+  "category": "Script"                   
+} 
