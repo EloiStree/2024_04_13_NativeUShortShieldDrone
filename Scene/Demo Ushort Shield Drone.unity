@@ -364,6 +364,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1984312545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1984312548}
+  - component: {fileID: 1984312547}
+  - component: {fileID: 1984312546}
+  m_Layer: 0
+  m_Name: UShort Shield Drone Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1984312546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984312545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4759a81e0c2b1854eb705ab49e4dd1ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1984312547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984312545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b962b0d575e674b42956c32a4ca216c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sample:
+    m_quadrantIndex: 0
+    m_quadrantRightX: 0
+    m_quadrantHeightY: 0
+    m_quadrantDepthZ: 0
+    m_angleLeftRight360: 0
+    m_percentDronePitch: 0
+    m_percentDroneRoll: 0
+    m_percentShieldState: 0
+--- !u!4 &1984312548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984312545}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0020372313, y: 0.2517987, z: 0.025843564}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2104028314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7855185389721645788, guid: b9d969bd8d950a54983a3d1a4691d686,
@@ -392,12 +458,12 @@ PrefabInstance:
     - target: {fileID: 5797230072985157063, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
       propertyPath: m_roll
-      value: -0.02745098
+      value: -0.05882353
       objectReference: {fileID: 0}
     - target: {fileID: 5797230072985157063, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
       propertyPath: m_tilt
-      value: -0.02745098
+      value: -0.05882353
       objectReference: {fileID: 0}
     - target: {fileID: 5797230072985157063, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
@@ -411,58 +477,83 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5797230072985157063, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
+      propertyPath: m_droneInfo.m_quadrantIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797230072985157063, guid: b9d969bd8d950a54983a3d1a4691d686,
+        type: 3}
+      propertyPath: m_droneInfo.m_quadrantDepthZ
+      value: 106
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797230072985157063, guid: b9d969bd8d950a54983a3d1a4691d686,
+        type: 3}
+      propertyPath: m_droneInfo.m_quadrantRightX
+      value: 174
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797230072985157063, guid: b9d969bd8d950a54983a3d1a4691d686,
+        type: 3}
       propertyPath: m_droneInfo.m_quadrantHeightY
-      value: 283
+      value: 326
       objectReference: {fileID: 0}
     - target: {fileID: 5797230072985157063, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
       propertyPath: m_droneInfo.m_percentDroneRoll
-      value: 124
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5797230072985157063, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
       propertyPath: m_droneInfo.m_percentDroneTilt
-      value: 124
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 5797230072985157063, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
       propertyPath: m_droneInfo.m_angleLeftRight360
-      value: 20
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797230072985157063, guid: b9d969bd8d950a54983a3d1a4691d686,
+        type: 3}
+      propertyPath: m_droneInfo.m_percentDronePitch
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797230072985157063, guid: b9d969bd8d950a54983a3d1a4691d686,
+        type: 3}
+      propertyPath: m_droneInfo.m_percentShieldState
+      value: 37196
       objectReference: {fileID: 0}
     - target: {fileID: 6798417421793916736, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0050000004
+      value: 0.17400001
       objectReference: {fileID: 0}
     - target: {fileID: 6798417421793916736, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.28300002
+      value: 0.326
       objectReference: {fileID: 0}
     - target: {fileID: 6798417421793916736, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.09200001
+      value: 0.106000006
       objectReference: {fileID: 0}
     - target: {fileID: 6798417421793916736, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.96965593
+      value: 0.9994665
       objectReference: {fileID: 0}
     - target: {fileID: 6798417421793916736, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.007824397
+      value: -0.02309173
       objectReference: {fileID: 0}
     - target: {fileID: 6798417421793916736, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.24399807
+      value: 0.00053351256
       objectReference: {fileID: 0}
     - target: {fileID: 6798417421793916736, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.013082757
+      value: 0.02309173
       objectReference: {fileID: 0}
     - target: {fileID: 6798417421793916736, guid: b9d969bd8d950a54983a3d1a4691d686,
         type: 3}
@@ -511,3 +602,4 @@ SceneRoots:
   - {fileID: 458279340}
   - {fileID: 133875272}
   - {fileID: 348116206}
+  - {fileID: 1984312548}
