@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061830706862031442}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.012147025, y: 0.81689817, z: -0.09473129, w: 0.5688196}
+  m_LocalRotation: {x: 0.025766019, y: 0.9119033, z: 0.3836563, w: -0.14344469}
   m_LocalPosition: {x: 0.0050000004, y: 0.202, z: 0.09200001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47,21 +47,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_droneInfo:
+    m_gameState: 0
     m_quadrantIndex: 0
     m_quadrantRightX: 5
     m_quadrantHeightY: 202
     m_quadrantDepthZ: 92
     m_angleLeftRight360: 20000
-    m_percentDroneTilt: 155
+    m_percentDronePitch: 0
     m_percentDroneRoll: 142
     m_percentShieldState: 37254
   m_whatToMove: {fileID: 6798417421793916736}
+  m_shieldToScale: {fileID: 7855185389721645788}
   m_renderer: {fileID: 7329103971598191992}
   m_colorFromMin: {r: 1, g: 0.09286968, b: 0, a: 0.5}
   m_colorToMax: {r: 0, g: 1, b: 0, a: 1}
-  m_tilt: 0.21568628
+  m_tilt: -1
   m_roll: 0.11372549
   m_tiltRollAngle: 45
+  m_droneShieldRadius: 0.2
 --- !u!1 &6167922804731658392
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +94,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.0000000018626454, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.19999999, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6798417421793916736}
@@ -121,9 +124,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -245,7 +245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 1c1e1ceafd12af046a010cee1bf8e988,
         type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1c1e1ceafd12af046a010cee1bf8e988,

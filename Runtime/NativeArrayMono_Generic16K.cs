@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
 namespace DroneIMMO
@@ -22,14 +23,18 @@ namespace DroneIMMO
         {
             m_nativeArray.Create();
         }
-
+        public  void GetRandom(out int index, out T drone)
+        {
+            index = UnityEngine.Random.Range(0, NativeArray_Generic16K<T>.ARRAY_MAX_SIZE);
+            Get(index, out drone);
+        }
         public void Get(int index, out T valueInArray)
         {
             m_nativeArray.Get(index, out valueInArray);
         }
         public void Set(int index, T valueInArray)
         {
-            Set(index, valueInArray);
+            m_nativeArray.Set(index, valueInArray);
         }
         public void OnDestroy()
         {
