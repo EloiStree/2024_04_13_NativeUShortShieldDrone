@@ -1,25 +1,39 @@
 ﻿using UnityEngine;
 
-public class NativeArrayMono_Generic16K<T>:MonoBehaviour where T : struct
+
+namespace DroneIMMO
 {
-    public T m_sample;
-    public NativeArray_Generic16K<T> m_nativeArray = new NativeArray_Generic16K<T>();
+    public class NativeArrayMono_Generic16K<T> : MonoBehaviour where T : struct
+    {
+        [Tooltip("Unused info to represent what is store inside.")]
+        public T m_sample;
 
-    public void Awake()
-    {
-        m_nativeArray.Create();
-    }
+        /// <summary>
+        /// Allows to ahve native array that are persistent and can be used in jobs. With 128x128 elements in it for all.
+        /// </summary>
+        public NativeArray_Generic16K<T> m_nativeArray = new NativeArray_Generic16K<T>();
 
-    public void Get(int index, out T shieldDroneAsUShort)
-    {
-        m_nativeArray.Get(index, out shieldDroneAsUShort);
-    }
-    public void Set(int index, T shieldDroneAsUShort)
-    {
-        Set(index, shieldDroneAsUShort);
-    }
-    public void OnDestroy()
-    {
-        m_nativeArray.Destroy();
+        public NativeArray_Generic16K<T> GetGenericNativeArray()
+        {
+            return m_nativeArray;
+        }
+
+        public void Awake()
+        {
+            m_nativeArray.Create();
+        }
+
+        public void Get(int index, out T valueInArray)
+        {
+            m_nativeArray.Get(index, out valueInArray);
+        }
+        public void Set(int index, T valueInArray)
+        {
+            Set(index, valueInArray);
+        }
+        public void OnDestroy()
+        {
+            m_nativeArray.Destroy();
+        }
     }
 }

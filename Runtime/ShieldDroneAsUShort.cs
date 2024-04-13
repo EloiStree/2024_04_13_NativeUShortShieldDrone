@@ -1,12 +1,14 @@
 ﻿[System.Serializable]
 public struct ShieldDroneAsUShort
 {
-    public byte m_quadrantByte;
-    public ushort m_quadrantX;
-    public ushort m_quadranty;
-    public ushort m_quadrantz;
-    public ushort m_angleLR180;
-    public ushort m_percentShield;
+    public byte m_quadrantIndex;
+    public ushort m_quadrantRightX;
+    public ushort m_quadrantHeightY;
+    public ushort m_quadrantDepthZ;
+    public byte m_angleLeftRight360;
+    public byte m_percentDroneTilt;
+    public byte m_percentDroneRoll;
+    public ushort m_percentShieldState;
 }
 
 
